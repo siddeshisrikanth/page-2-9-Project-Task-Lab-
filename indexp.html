@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="">
+    <title>n∞Guru</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+
+.dropbtn {
+   
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 29px;
+    margin-right: 58%;
+    font-size: 12px;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 5px 11px;
+        text-decoration: none;
+        display: block;
+    }
+
+      
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.list-group .labs {
+    background-color: lightskyblue;
+    border: 1px solid blue;
+}
+</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <i class="bi bi-list navbar-brand" style="color: #02AADA;font-size: 28px;"></i>
+        <a class="navbar-brand" href="#" style="color: #02AADA;font-size: 28px;"><strong>n∞Guru</strong></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Menu Item 1 <span class="sr-only">(current)</span></a>
+        </li>&ensp;
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Menu Item 2 <span class="sr-only">(current)</span></a>
+        </li>&ensp;
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Menu Item 3 <span class="sr-only">(current)</span></a>
+        </li>&ensp;
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Menu Item 4 <span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" >
+        <input class="form-control mr-sm-2" type="search" style="width:450px;">
+        <i class="bi bi-search" style="position: absolute;margin-right:1%;margin-left:1%;color:#999999">&ensp; Search Here</i>
+        </form>
+        <i class="bi bi-person-circle" style="margin-left:2%;color: #F36774;font-size: 28px;"></i>
+    </nav>
+    <div class="dropdown" style="margin-top:3%;position: absolute;right:294px;">
+      <label>Sort by</label>
+      <button style="background:#fff;color:#000;border-color:#CCCCCC" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Newest 
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another </a>
+        <a class="dropdown-item" href="#">Something </a>
+      </div>
+    </div>
+    <div style="margin-top:3%;position: absolute;right:64px;">
+      <button style="background:#0C6CB3;color:#fff;width:200px" class="btn btn-secondary" data-toggle="collapse" data-target="#ViewCollapse1" type="button">
+        Add Project 
+      </button>
+    </div>
+    <div style="display: flex;">
+      <div class="list-group" style="width:220px;margin-top: 2%;">
+        <a href="#" class="list-group-item list-group-item-action" style="white-space:nowrap; border: none;"><img src="/images/homework.png" class="icons" /> &ensp;Problem statement</a>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action" style="background: #0C6CB31A 0% 0% no-repeat padding-box;color:#0C6CB3;border:none;white-space:nowrap;">
+          <strong><img src="/images/search.svg" class="icons" />&ensp; Projects</strong> 
+        <a href="#" class="list-group-item list-group-item-action" style="border:none"><img src="/images/flask.png" class="icons" /> &ensp;Labs</a>
+        <a href="#" class="list-group-item list-group-item-action" style="border:none"><img src="/images/asset.png" class="icons" /> &ensp;Assets</a>
+        <a href="#" class="list-group-item list-group-item-action" style="border:none"><img src="/images/projects,png.jpg" class="icons" /> &ensp;Courses</a>
+        <a href="#" class="list-group-item list-group-item-action" style="border:none"><img src="/images/customer.png" class="icons" /> &ensp;Customers</a>
+        <a href="#" class="list-group-item list-group-item-action" style="border:none"><img src="/images/settings.png" class="icons" /> &ensp;Settings</a>
+      </div>
+      <div style="margin-top: 2%;margin-left:2%">
+        <h2>PROJECTS</h2>
+        <div style="display: flex;">
+          <div class="letter" style="margin-right: 92px;">
+            <i style="font-size: 80px;color:#F36774" class="bi bi-envelope-open-fill"></i>
+            <div class="letter-text">
+              <p>18</p>
+              <p>Open</p>
+            </div>
+          </div>
+          <div class="letter" style="margin-right: 92px;">
+            <i style="font-size: 80px;color:#FDB84C" class="bi bi-envelope-paper-fill"></i>
+            <div class="letter-text">
+              <p>12</p>
+              <p>InProgress</p>
+            </div>
+          </div>
+          <div class="letter">
+            <i style="font-size: 80px;color:#146FD7" class="bi bi-envelope-check-fill"></i>
+            <div class="letter-text">
+              <p>23</p>
+              <p>Closed</p>
+            </div>
+          </div>
+        </div>
+        <table>
+
+          <tr>
+              <th>Project Name</th>
+              <th>Description</th>
+              <th>Start Date</th>
+              <th>Estimated End Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Remote Monitoring Of CNC Machines</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="open">Open</button></td>
+              <td>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="#">Assign Problem Statement</a>
+                        <a href="#">Add Notes</a>
+                        <a href="#" style="background-color:blue">Edit</a>
+                        <a href="#">View</a>
+                        <a href="#">Copy</a>
+                        <a href="#">Delete</a>
+                    </div>
+                  <i class="bi bi-three-dots-vertical"></i>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Preventive Maintenance Of Wind Turbines</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="inprogress">In-progress</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Production Line Optimization Of Textile Plant</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="open">Open</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Plant Performance Monitoring Using Digital Twin</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="closed">Closed</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical" ></i>
+                  
+                </div>
+              </td>
+              
+                </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Predictive Analytics Of WindFarm</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="open">Open</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                  
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Quality Management Using Computer Vision</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="inprogress">In-progress</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                  
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Intelligent Video Analytics</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="closed">Closed</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                 
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Progostics through simulations</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="closed">Closed</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                 
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Remote Monitoring Of CNC Machines</a></td>
+              <td style="white-space:nowrap;">Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="open">Open</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                 
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td style="white-space:nowrap;"><a href="">Remote Monitoring Of CNC Machines</a></td>
+              <td style="white-space:nowrap;"> Stock Photography Agency With Millions...</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td style="white-space:nowrap;">31-01-2021</td>
+              <td>  <button class="inprogress">In-Progress</button></td>
+              <td>
+                <div class="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                  
+                </div>
+              </td>
+          </tr>
+        </table>
+        <div style="margin-left:23%;margin-top: 2%;display:flex;">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+              <li class="page-item"><a class="page-link" href="#">7</a></li>
+              <li class="page-item"><a class="page-link" href="#">8</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="dropdown" style="margin-left:45%;">
+            <button style="background:#fff;color:#333333;border-color: #333333;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              10/Page
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">1</a>
+              <a class="dropdown-item" href="#">2</a>
+              <a class="dropdown-item" href="#">3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;right:1%;width:1250px;top:0">
+      <div class="collapse" id="ViewCollapse1" sty>
+        <div class="card card-body">
+          <h4 style="color:#0C6CB3;">Add Project</h4><br>
+          <button style="border:none;display:flex;border:1px solid #000;white-space:nowrap;padding:1%" data-toggle="collapse" data-target="#ViewCollapse5">Project Details<i style="margin-left:88.5%" class="bi bi-chevron-down"></i></button><br>
+          <div class="collapse" id="ViewCollapse5" style="margin-bottom:1%;border:1px solid #000;padding:1%">
+            <div style="display:flex;">
+              <div style="width:625px;margin-right:25px">
+                <label class="lab">Project Name</label>
+                <input type="search" id="query" name="q" class="form-control inp" placeholder="Type Here"><br>
+                <label class="lab">Project Type </label>
+                <textarea class="form-control inp" id="message" rows="1" cols="1"
+                  placeholder="Type Here "></textarea><br>
+                  <label class="lab">Estimated Start Date</label>
+              <input type="date" class="form-control inp"><br>
+              <label class="lab">Actual Start Date</label>
+              <input type="date" class="form-control inp"><br>
+                  <label class="lab"> Estimated Budget</label>
+                  <input type="search" id="query" name="q" class="form-control inp" placeholder="Type Here"><br>
+                  <label class="lab">Outcome </label>
+                  <textarea class="form-control inp" id="message" rows="5" cols="5"
+                    placeholder="Type Here "></textarea><br>
+                  
+              </div>
+              <div style="width:625px;margin-right:25px">
+                <label class="lab">Project Code</label>
+                <input type="search" id="query" name="q" class="form-control inp" placeholder="Type Here"><br>
+                <label class="lab">Status </label>
+                <textarea class="form-control inp" id="message" rows="1" cols="1"
+                  placeholder="Type Here "></textarea><br>
+                  <label class="lab">Project Description </label>
+                  <textarea class="form-control inp" id="message" rows="5" cols="5"
+                    placeholder="Type Here "></textarea><br>
+                    <label class="lab">Estimated End Date</label>
+              <input type="date" class="form-control inp"><br>
+              <label class="lab">Actual End Date</label>
+              <input type="date" class="form-control inp"><br>
+              <label class="lab">Actual Budget</label>
+                <input type="search" id="query" name="q" class="form-control inp" placeholder="Type Here"><br>
+              </div>
+            </div>
+            <div style="display:flex;">
+              <button type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse5">Cancel</button>
+              <button style="background:#fff;color:#0C6CB3;border-color: #0C6CB3;" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse5">Save</button>
+            </div>
+          </div>
+          <button style="border:none;display:flex;border:1px solid #000;white-space:nowrap;padding:1%" data-toggle="collapse" data-target="#ViewCollapse6">Project Contact<i style="margin-left:88%" class="bi bi-chevron-down"></i></button><br>
+          <div class="collapse" id="ViewCollapse6" style="margin-bottom:1%;border:1px solid #000;padding:1%">
+            <label class="lab">Add Contact</label>
+            <div style="width:500px">
+              <i class="bi bi-search" style="position: absolute;margin-top:0.5%;color:#999999;right:59%;"></i>
+              <input type="search" class="form-control inp" placeholder="Search">
+            </div>
+            <br>
+            <table class="table" style="border-left:1px solid;border-right:1px solid; border-color:#142E6E1A;margin-top:0px;">
+              <thead>
+                  <tr>
+                      <th scope="col">Contact Name</th>
+                      <th scope="col" style="white-space: nowrap;">Contact Role</th>
+                      <th scope="col" style="white-space: nowrap;">Email</th>
+                      <th scope="col" style="white-space: nowrap;">Phone Number</th>
+                      <th scope="col" style="white-space: nowrap;">Actions</th>
+                      <th scope="col"> &emsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Patty O'Furniture</td>
+                      <td style="white-space: nowrap;">Corporate Administrator</td>
+                      <td>pofurniture@xyzcompany.com</td>
+                      <td>31-01-2021</td>
+                      <td>
+                        <div class="dropdown">
+                          <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Copy</a>
+                            <a class="dropdown-item" href="#" >View</a>
+                            <a class="dropdown-item" href="#">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td> Olive Yew Aida Bugg</td>
+                    <td style="white-space: nowrap;">Business Administrator</td>
+                    <td>oliveyewaidabugg@xyzcompany.com</td>
+                    <td>14-02-2021</td>
+                    <td>
+                      <div class="dropdown">
+                        <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                          <a class="dropdown-item" href="#">Edit</a>
+                          <a class="dropdown-item" href="#">Copy</a>
+                          <a class="dropdown-item" href="#" >View</a>
+                          <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Maureen Biologist</td>
+                  <td style="white-space: nowrap;">Technical Administrator</td>
+                  <td>maureenbiologist@xyzcompany.com</td>
+                  <td>15-02-2021</td>
+                  <td>
+                    <div class="dropdown">
+                      <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Copy</a>
+                        <a class="dropdown-item" href="#" >View</a>
+                        <a class="dropdown-item" href="#">Delete</a>
+                      </div>
+                    </div>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+            <div style="display:flex;">
+              <button type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse6">Cancel</button>
+              <button style="background:#fff;color:#0C6CB3;border-color: #0C6CB3;" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse6">Save</button>
+            </div>
+          </div>
+          <button style="border:none;display:flex;border:1px solid #000;white-space:nowrap;padding:1%" data-toggle="collapse" data-target="#ViewCollapse7">Problem Statement<i style="margin-left:85.5%" class="bi bi-chevron-down"></i></button><br>
+          <div class="collapse" id="ViewCollapse7" style="margin-bottom:1%;border:1px solid #000;padding:1%">
+            <label class="lab">Assign Problem Statemnet</label>
+            <div style="width:500px">
+              <i class="bi bi-search" style="position: absolute;margin-top:0.5%;color:#999999;right:59%;"></i>
+              <input type="search" class="form-control inp" placeholder="Select">
+            </div>
+            <br>
+            <table class="table" style="border-left:1px solid;border-right:1px solid; border-color:#142E6E1A;margin-top:0px;">
+              <thead>
+                  <tr>
+                      <th scope="col">Problem Statement Name</th>
+                      <th scope="col" style="white-space: nowrap;">Assigned Date</th>
+                      <th scope="col"> &emsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Course Management</td>
+                      <td style="white-space: nowrap;">01-01-2021</td>
+                      <td><i class="bi bi-trash3"></i></td>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>Business Admin</td>
+                    <td style="white-space: nowrap;">15-01-2021</td>
+                    <td><i class="bi bi-trash3"></i></td>
+                </tr>
+                <tr>
+                  <td>Marketing</td>
+                  <td style="white-space: nowrap;">16-01-2021</td>
+                  <td><i class="bi bi-trash3"></i></td>
+              </tr>
+              </tbody>
+            </table>
+            <div style="display:flex;">
+              <button type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse7">Cancel</button>
+              <button style="background:#fff;color:#0C6CB3;border-color: #0C6CB3;" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse7">Save</button>
+            </div>
+          </div>
+          <button style="border:none;display:flex;border:1px solid #000;white-space:nowrap;padding:1%" data-toggle="collapse" data-target="#ViewCollapse8">Labs<i style="margin-left:94.5%" class="bi bi-chevron-down"></i></button><br>
+          <div class="collapse" id="ViewCollapse8" style="margin-bottom:1%;border:1px solid #000;padding:1%">
+            <label class="lab">Add Lab</label>
+            <div style="width:500px">
+              <i class="bi bi-search" style="position: absolute;margin-top:0.5%;color:#999999;right:59%;"></i>
+              <input type="search" class="form-control inp" placeholder="Search">
+            </div>
+            <br>
+            <table class="table" style="border-left:1px solid;border-right:1px solid; border-color:#142E6E1A;margin-top:0px;">
+              <thead>
+                  <tr>
+                      <th scope="col">Lab Name</th>
+                      <th scope="col" style="white-space: nowrap;">Start Date</th>
+                      <th scope="col" style="white-space: nowrap;">End Date</th>
+                      <th scope="col" style="white-space: nowrap;">Actions</th>
+                      <th scope="col"> &emsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Course Management</td>
+                      <td style="white-space: nowrap;">01-01-2021</td>
+                      <td  style="white-space: nowrap;">31-01-2021</td>
+                      <td>
+                        <div class="dropdown">
+                          <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Copy</a>
+                            <a class="dropdown-item" href="#" >View</a>
+                            <a class="dropdown-item" href="#">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>Business Admin Management</td>
+                    <td style="white-space: nowrap;">15-02-2021</td>
+                    <td  style="white-space: nowrap;">14-02-2021</td>
+                    <td>
+                      <div class="dropdown">
+                        <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                          <a class="dropdown-item" href="#">Edit</a>
+                          <a class="dropdown-item" href="#">Copy</a>
+                          <a class="dropdown-item" href="#" >View</a>
+                          <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Marketing Management</td>
+                  <td style="white-space: nowrap;">16-02-2021</td>
+                  <td style="white-space: nowrap;">15-02-2021</td>
+                  <td>
+                    <div class="dropdown">
+                      <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Copy</a>
+                        <a class="dropdown-item" href="#" >View</a>
+                        <a class="dropdown-item" href="#">Delete</a>
+                      </div>
+                    </div>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+            <div style="display:flex;">
+              <button type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse8">Cancel</button>
+              <button style="background:#fff;color:#0C6CB3;border-color: #0C6CB3;" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse8">Save</button>
+            </div>
+          </div>
+          <button style="border:none;display:flex;border:1px solid #000;white-space:nowrap;padding:1%" data-toggle="collapse" data-target="#ViewCollapse9">Assets<i style="margin-left:93.5%" class="bi bi-chevron-down"></i></button><br>
+          <div class="collapse" id="ViewCollapse9" style="margin-bottom:1%;border:1px solid #000;padding:1%">
+            <label class="lab">Assign Asset</label>
+            <div style="width:500px">
+              <i class="bi bi-search" style="position: absolute;margin-top:0.5%;color:#999999;right:59%;"></i>
+              <input type="search" class="form-control inp" placeholder="Search">
+            </div>
+            <br>
+            <table class="table" style="border-left:1px solid;border-right:1px solid; border-color:#142E6E1A;margin-top:0px;">
+              <thead>
+                  <tr>
+                      <th scope="col">Lab Name</th>
+                      <th scope="col" style="white-space: nowrap;">Asset Type</th>
+                      <th scope="col" style="white-space: nowrap;">Asset Name</th>
+                      <th scope="col" style="white-space: nowrap;">Uploaded Date</th>
+                      <th scope="col" style="white-space: nowrap;">Uploaded By</th>
+                      <th scope="col" style="white-space: nowrap;">Actions</th>
+                      <th scope="col"> &emsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td style="white-space: nowrap;">Course Management</td>
+                      <td style="white-space: nowrap;">Course Management</td>
+                      <td style="white-space: nowrap;">Course Management</td>
+                      <td style="white-space: nowrap;">01-01-2021</td>
+                      <td style="white-space: nowrap;">John Amit Philips</td>
+                      <td>
+                        <div class="dropdown">
+                          <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Copy</a>
+                            <a class="dropdown-item" href="#" >View</a>
+                            <a class="dropdown-item" href="#">Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>Business Admin Mareting</td>
+                    <td style="white-space: nowrap;">Business Admin Mareting</td>
+                    <td style="white-space: nowrap;">Business Admin Mareting</td>
+                    <td style="white-space: nowrap;">15-01-2021</td>
+                    <td style="white-space: nowrap;">Paddy O' Furniture</td>
+                    <td>
+                      <div class="dropdown">
+                        <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                          <a class="dropdown-item" href="#">Edit</a>
+                          <a class="dropdown-item" href="#">Copy</a>
+                          <a class="dropdown-item" href="#" >View</a>
+                          <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Marketing Management</td>
+                  <td style="white-space: nowrap;">Marketing Management</td>
+                  <td style="white-space: nowrap;">Marketing Management</td>
+                  <td style="white-space: nowrap;">16-01-2021</td>
+                  <td style="white-space: nowrap;">Maureen Biologist</td>
+                  <td>
+                    <div class="dropdown">
+                      <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"></i>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right:150px;border-color: #02AADA;">
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Copy</a>
+                        <a class="dropdown-item" href="#" >View</a>
+                        <a class="dropdown-item" href="#">Delete</a>
+                      </div>
+                    </div>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+            <div style="display:flex;">
+              <button type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse9">Cancel</button>
+              <button style="background:#fff;color:#0C6CB3;border-color: #0C6CB3;" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse9">Save</button>
+            </div>
+          </div>
+          <div style="display:flex;margin-top: 100px;border-top:1px solid #C5C5C5;">
+            <button style="margin-top:1%" type="button" class="btn btn-style2" data-toggle="collapse" data-target="#ViewCollapse1">Close</button>
+            <button style="margin-top:1%" type="button" class="btn btn-style1" data-toggle="collapse" data-target="#ViewCollapse1
+            ">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      background: #F1F5F8;
+    }
+    .list-group-item {
+      background: #F1F5F8;
+    }
+    img {
+      width: 10%;
+    }
+    .letter {
+      display: flex;
+      margin-top:2%;
+      box-shadow: 0px 1px 8px #142E6E1A;
+      width:345px;
+      padding-left:2%;
+      height:125px;
+    }
+    .letter-text {
+      margin-top: 10%;
+      margin-left: 8%;
+      font-size: 20px;
+    }
+    table, th, td {
+      background: #fff;
+      padding: 1%;
+      border: 1px solid #142E6E1A;
+      border-left: none;
+      border-right: none;
+      border-collapse: collapse;
+      width: 95%;
+    }
+    table, th {
+      border: 1px solid black;
+      border-left: none;
+      border-right: none;
+    }
+    table, th {
+      font-size: 15px;
+      padding-top: 13px;
+      padding-bottom: 8px;
+      margin-top: 30px;
+    }
+    td {
+      font-size: 13px;
+      padding-right: 100px;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+    .open {
+      border:1px solid #F36774;
+      background:#F3677433;
+      width:50px;
+      height:35px;
+      border-radius:4px;
+    }
+    .closed {
+      border:1px solid #59941B;
+      background:#59941B33;
+      width:50px;
+      height:35px;
+      border-radius:4px;
+    }
+    .inprogress {
+      border:1px solid #FDB84C;
+      background:#FDB84C33;
+      width:80px;
+      height:35px;
+      border-radius:4px;
+    }
+    .dropdown-item:hover {
+      background: #02AADA;
+      color: #fff;
+    }
+    .inp {
+      border-color: #CCCCCC;
+      background: #F5F5F5;
+      color: #333333;
+    }
+    .lab {
+      color: #333333;
+    }
+    .btn-style {
+      color: #0C6CB3;
+      border-color: #0C6CB3;
+      background: #fff;
+      width: 65px;
+      margin-left: 85%;
+    }
+    .btn-style2 {
+      color: #0C6CB3;
+      border-color: #0C6CB3;
+      background: #fff;
+      width: 65px;
+      margin-left: 65%;
+    }
+    .btn-style1 {
+      background: #0C6CB3;
+      color: #fff;
+      width: 65px;
+      margin-left: 5%;
+    }
+  </style>
+</html>
